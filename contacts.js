@@ -19,7 +19,7 @@ function updateContacts(contacts) {
   fs.writeFile(contactsPath, JSON.stringify(contacts));
 }
 
-export async function removeContact(contactId) {
+export async function removeContact(id) {
   const contacts = await listContacts();
   const index = contacts.findIndex((item) => item.id === id);
   if (index === -1) {
